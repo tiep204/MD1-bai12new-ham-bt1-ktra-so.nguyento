@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>bang so nguyen to</h1>
+<input id="kiemtra" type="text">
+<button onclick="tiepisme()">Kiểm Tra</button>
+<br>
+<h1 id="ketQua"></h1>
+<script>
+
+  function soNguyenTo(n){
+      let a = 1;
+      if (n <2)
+          return a = 0;
+      let i = 2;
+      while(i <n){
+          if( n%i==0 ) {
+              a = 0;
+              break;
+          }
+          i++;
+      }
+      return a;
+  }
+  function tiepisme(){
+      let n= +document.getElementById('kiemtra').value;
+
+      let i = 0,
+          check=0,
+          result ="";
+      while ( i < n){
+          check = soNguyenTo(i);
+          if( check == 1 ) result += i + " ";
+          ++i;
+      }
+      document.getElementById('ketQua').innerHTML='nhung so sau day la so nguyen to:'+ result
+  }
+
+
+
+
+</script>
+</body>
+</html>
